@@ -37,6 +37,11 @@ header {
     justify-content: center;
 }
 
+.card:hover {
+    background: whitesmoke;
+    cursor: pointer;
+}
+
 .avatar {
     border-radius: 50%;
     height: auto;
@@ -54,7 +59,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(100, 100, 100, 0.4)
+    background: rgba(100, 100, 100, 0.8)
 }
 
 .modal {
@@ -89,7 +94,6 @@ header {
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
     }
 
     .avatar {

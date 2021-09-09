@@ -19,6 +19,20 @@ body {
 header {
     padding: .5em;
     text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#searchbar {
+    display: block;
+    width: 15em;
+    height: 3em;
+    padding: .5em;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    font-style: italic;
 }
 
 .grid-container {
@@ -92,6 +106,10 @@ header {
 
 .hidden {
     display: none;
+}
+
+.test {
+    background-color: yellow;
 }
 
 /* --------------------------------------------------------------

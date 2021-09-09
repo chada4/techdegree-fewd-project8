@@ -75,3 +75,21 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
+
+// Searchbar -------------------------------------------------------------------
+
+function searchNames() {
+	let input = document.getElementById('searchbar').value;
+	input=input.toLowerCase();
+	let x = document.querySelectorAll('.card');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].classList.add("hidden")
+		}
+		else {
+            x[i].classList.remove("hidden");
+			x[i].style.display=".card";				
+		}
+	}
+}

@@ -4,6 +4,10 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+const modalNext = document.querySelector(".modal-next");
+const modalPrevious = document.querySelector(".modal-previous");
+let modalIndex = 0;
+
 
 fetch(urlAPI)
     .then(res => res.json())
@@ -19,7 +23,7 @@ function displayEmployees(employeeData) {
     employees.forEach((employee, index) => {
         let name = employee.name;
         let email = employee.email;
-        let city = employee.location.city
+        let city = employee.location.city;
         let picture = employee.picture;
 
         employeeHTML += `
@@ -58,6 +62,7 @@ function displayModal(index) {
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+    modalIndex = index;
 }
 
 gridContainer.addEventListener('click', e => {
@@ -93,3 +98,24 @@ function searchNames() {
 		}
 	}
 }
+
+// Next / Previous -------------------------------------------------------------------
+
+
+modalNext.addEventListener('click', () => {
+    if (modalIndex === 11) {
+        displayModal(0);
+    } else {
+     modalIndex++;
+    displayModal(modalIndex);
+    }
+});
+
+modalPrevious.addEventListener('click', () => {
+    if (modalIndex === 0) {
+        displayModal(11);
+    } else {
+     modalIndex--;
+    displayModal(modalIndex);
+    }
+});

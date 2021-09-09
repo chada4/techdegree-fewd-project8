@@ -50,7 +50,7 @@ header {
     justify-content: center;
 }
 
-.card:hover {
+.card:hover, .modal-close:hover, .modal-next:hover, .modal-previous:hover {
     background: whitesmoke;
     cursor: pointer;
 }
@@ -91,7 +91,7 @@ header {
     line-height: 275%;
 }
 
-.modal-close {
+.modal-close, .modal-next, .modal-previous {
     position: absolute;
     right: 10px;
     top: 1px;
@@ -102,6 +102,15 @@ header {
     font-size: large;
     width: 48px;
     height: 48px;
+    border-radius: 50%;
+}
+
+.modal-next, .modal-previous {
+    top: 100px;
+}
+
+.modal-previous {
+    left: 10px;
 }
 
 .hidden {

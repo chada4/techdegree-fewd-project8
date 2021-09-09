@@ -1,5 +1,5 @@
 let employees = [];
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
@@ -24,7 +24,7 @@ function displayEmployees(employeeData) {
 
         employeeHTML += `
             <div class="card" data-index="${index}">
-                <img class="avatar" src="${picture.large}" />
+                <img class="avatar" src="${picture.large}" alt="profile picture" />
                 <div class="text-container">
                     <h2 class="name">${name.first} ${name.last}</h2>
                     <p class="email">${email}</p>
@@ -44,8 +44,8 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-        <img class="avatar" src="${picture.large}" />
-        <div class="text-container">
+        <img class="avatar" src="${picture.large}" alt="profile picture" />
+        <div class="text-container modal-text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
             <p class="address">${city}</p>
